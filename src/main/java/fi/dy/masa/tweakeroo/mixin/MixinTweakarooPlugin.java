@@ -16,7 +16,7 @@ public class MixinTweakarooPlugin implements IMixinConfigPlugin
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName)
 	{
 
-		//Mixins.addConfiguration("mixins.optifine_patch.json");
+		Mixins.addConfiguration("mixins.optifine_patch.json");
 
 		// only loads our pushLimit modifier when carpet mod not loaded
 		if (mixinClassName.endsWith(".MixinPistonHandler"))
