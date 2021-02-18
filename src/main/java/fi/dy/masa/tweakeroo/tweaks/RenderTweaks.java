@@ -474,7 +474,7 @@ public class RenderTweaks {
                 int z = Integer.parseInt(nums[2]);
                 // System.out.println(x + "," + y + "," + z);
                 BlockPos pos = new BlockPos(x, y, z);
-                map.put(pos.asLong(), new ListMapEntry(pos,true));
+                map.put(pos.asLong(), new ListMapEntry(pos, true));
             } catch (NumberFormatException e) {
 
                 Tweakeroo.logger.warn("Error while parsing int: " + e.toString());
