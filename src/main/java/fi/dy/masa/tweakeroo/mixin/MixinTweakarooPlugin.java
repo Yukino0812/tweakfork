@@ -1,6 +1,7 @@
 package fi.dy.masa.tweakeroo.mixin;
 
 import org.objectweb.asm.tree.ClassNode;
+import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
@@ -14,11 +15,17 @@ public class MixinTweakarooPlugin implements IMixinConfigPlugin
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName)
 	{
+
+		//Mixins.addConfiguration("mixins.optifine_patch.json");
+
 		// only loads our pushLimit modifier when carpet mod not loaded
 		if (mixinClassName.endsWith(".MixinPistonHandler"))
 		{
 			return PistonUtils.loadVanilla();
 		}
+
+		
+
 		return true;
 	}
 
