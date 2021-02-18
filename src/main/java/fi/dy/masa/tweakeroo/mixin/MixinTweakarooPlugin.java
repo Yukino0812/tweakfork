@@ -10,20 +10,18 @@ import fi.dy.masa.tweakeroo.util.PistonUtils;
 import java.util.List;
 import java.util.Set;
 
+import net.fabricmc.loader.api.FabricLoader;
+
 public class MixinTweakarooPlugin implements IMixinConfigPlugin
 {
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName)
 	{
-
-		Mixins.addConfiguration("mixins.optifine_patch.json");
-
 		// only loads our pushLimit modifier when carpet mod not loaded
 		if (mixinClassName.endsWith(".MixinPistonHandler"))
 		{
 			return PistonUtils.loadVanilla();
 		}
-
 		
 
 		return true;
@@ -34,6 +32,7 @@ public class MixinTweakarooPlugin implements IMixinConfigPlugin
 	@Override
 	public void onLoad(String mixinPackage)
 	{
+
 	}
 
 	@Override
@@ -45,6 +44,9 @@ public class MixinTweakarooPlugin implements IMixinConfigPlugin
 	@Override
 	public void acceptTargets(Set<String> myTargets, Set<String> otherTargets)
 	{
+		if (FabricLoader.getInstance().isModLoaded("optifabric")) {
+			Mixins.addConfiguration("mixins.optifine_patch.json");
+		}
 	}
 
 	@Override

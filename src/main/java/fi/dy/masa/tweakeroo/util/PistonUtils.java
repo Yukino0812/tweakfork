@@ -79,8 +79,7 @@ public class PistonUtils {
     }
 
     public static boolean loadVanilla() {
-        return !FabricLoader.getInstance().isModLoaded("carpet")
-                && !FabricLoader.getInstance().isModLoaded("quickcarpet");
+        return !FabricLoader.getInstance().isModLoaded("carpet");
     }
 
     public static int pushLimitCarpet(int value) {

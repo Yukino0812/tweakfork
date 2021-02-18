@@ -143,8 +143,6 @@ public abstract class MixinMinecraftClient implements IMinecraftClientInvoker
         }
     }
 
-    /*
-
     @ModifyConstant(method = "handleProfilerKeyPress", constant = @Constant(intValue = 46), require = 0, allow = 1)
     private int fixProfiler1(int orig)
     {
@@ -165,6 +163,5 @@ public abstract class MixinMinecraftClient implements IMinecraftClientInvoker
     {
         // ProfileResultImpl switched to using '\u001e', which looks horrible when printed, so return back to the old dot
         return Configs.Fixes.PROFILER_CHART_FIX.getBooleanValue() ? timing.name.replace('\u001e', '.') : timing.name;
-    }
-    */
+    }   
 }
