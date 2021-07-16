@@ -668,36 +668,36 @@ public class RenderTweaks {
 
     public static void onLightUpdateEvent(int chunkX, int chunkZ, CallbackInfo ci) {
 
-        ListType listtype = (ListType) Configs.Lists.SELECTIVE_BLOCKS_LIST_TYPE.getOptionListValue();
+        // ListType listtype = (ListType) Configs.Lists.SELECTIVE_BLOCKS_LIST_TYPE.getOptionListValue();
 
-        if (listtype == ListType.NONE) {
-            return;
-        }
-        MinecraftClient mc = MinecraftClient.getInstance();
-        boolean found = false;
-        if (mc != null && mc.world != null && mc.world.getLightingProvider() != null) {
+        // if (listtype == ListType.NONE) {
+        //     return;
+        // }
+        // MinecraftClient mc = MinecraftClient.getInstance();
+        // boolean found = false;
+        // if (mc != null && mc.world != null && mc.world.getLightingProvider() != null) {
 
-            ConcurrentHashMap<Long, ListMapEntry> list = (listtype == ListType.WHITELIST) ? SELECTIVE_WHITELIST
-                    : SELECTIVE_BLACKLIST;
+        //     ConcurrentHashMap<Long, ListMapEntry> list = (listtype == ListType.WHITELIST) ? SELECTIVE_WHITELIST
+        //             : SELECTIVE_BLACKLIST;
 
-            int minX = chunkX * 16 - 1;
-            int minZ = chunkZ * 16 - 1;
-            int maxX = chunkX * 16 + 16;
-            int maxZ = chunkZ * 16 + 16;
+        //     int minX = chunkX * 16 - 1;
+        //     int minZ = chunkZ * 16 - 1;
+        //     int maxX = chunkX * 16 + 16;
+        //     int maxZ = chunkZ * 16 + 16;
 
-            for (ListMapEntry entry : list.values()) {
+        //     for (ListMapEntry entry : list.values()) {
 
-                int x = entry.currentPosition.getX();
-                int z = entry.currentPosition.getZ();
-                if (x >= minX && z >= minZ && x <= maxX && z <= maxZ) {
-                    found = true;
-                    break;
-                }
-            }
-        }
-        if (found) {
-            ci.cancel();
-        }
+        //         int x = entry.currentPosition.getX();
+        //         int z = entry.currentPosition.getZ();
+        //         if (x >= minX && z >= minZ && x <= maxX && z <= maxZ) {
+        //             found = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // if (found) {
+        //     ci.cancel();
+        // }
 
     }
 
