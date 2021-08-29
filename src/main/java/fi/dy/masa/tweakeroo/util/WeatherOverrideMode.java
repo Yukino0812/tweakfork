@@ -5,10 +5,10 @@ import fi.dy.masa.malilib.util.StringUtils;
 
 public enum WeatherOverrideMode implements IConfigOptionListEntry {
 
-    CLEAR("CLEAR", "tweakfork.label.weather_override_mode.clear", false, false),
-    THUNDER("THUNDER", "tweakfork.label.weather_override_mode.thunder", false, true),
-    RAIN("RAIN", "tweakfork.label.weather_override_mode.rain", true, false),
-    RAINING_THUNDER("RAINING_THUNDER", "tweakfork.label.weather_override_mode.raining_thunder", true, true);
+    CLEAR("CLEAR", "tweakeroo.label.weather_override_mode.clear", false, false),
+    THUNDER("THUNDER", "tweakeroo.label.weather_override_mode.thunder", false, true),
+    RAIN("RAIN", "tweakeroo.label.weather_override_mode.rain", true, false),
+    RAINING_THUNDER("RAINING_THUNDER", "tweakeroo.label.weather_override_mode.raining_thunder", true, true);
 
     private final String configName;
     private final String unlocName;
